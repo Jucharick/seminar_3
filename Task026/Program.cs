@@ -29,3 +29,5 @@ Console.WriteLine("Введите целое число n");
 int n = int.Parse(Console.ReadLine());
 int lenght = (int)Math.Log10(n) + 1;
 Console.WriteLine(lenght);
+
+// логарифм показывает, в какую степень (т.е. сколько раз помножить на себя) нужно возвести десять, чтобы получить число разрядов данного числа
