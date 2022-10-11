@@ -10,4 +10,4 @@ for (int i = 1; i <= n; i++)
 {
     sum = sum + i;
 }
-Console.Write($"Сумма от 1 до N = {sum}");
+Console.Write($"Сумма от 1 до {n} = {sum}");
