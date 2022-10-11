@@ -1,9 +1,9 @@
-﻿// multiplication
+﻿// factorial
 
 Console.WriteLine("Введите целое число n");
 int input = int.Parse(Console.ReadLine());
 
-int multiplication(int multip)
+int factorial(int multip)
 {
     multip = 1;
     for (int i = 1; i <= input; i++)
@@ -12,4 +12,4 @@ int multiplication(int multip)
     }
     return multip;
 }
-Console.Write($"Произведение чисел от 1 до {input} = {multiplication(input)}");
+Console.Write($"Произведение чисел от 1 до {input} = {factorial(input)}");
