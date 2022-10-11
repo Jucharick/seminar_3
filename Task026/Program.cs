@@ -11,9 +11,13 @@
 Console.WriteLine("Введите целое число n");
 int n = int.Parse(Console.ReadLine());
 int i = 0;
-while (n != 0)
+if (n == 0) Console.WriteLine(1);
+else 
 {
-    n = n / 10;
-    i++;
+    while (n != 0)
+    {
+        n = n / 10;
+        i++;
+    }
+    Console.WriteLine(i);
 }
-Console.WriteLine(i);
