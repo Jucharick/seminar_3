@@ -3,7 +3,7 @@
 
 
 
-int[] array = new Int32[4];
+int[] array = new Int32[12];
 
 void FillArray(int[] array, int from, int to)
 {
@@ -23,21 +23,19 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-int posNeg (int[] array, int pos, int neg)
+void posNeg (int[] array)
 {
-    pos = 0;
-    neg = 0;
+    int pos = 0;
+    int neg = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > 0) pos = pos + array[i];
-        else neg = pos + array[i];
+        else neg = neg + array[i];
     }
-    return pos; 
-    return neg;
-    Console.WriteLine(pos);
+    Console.WriteLine(pos); 
     Console.WriteLine(neg);
 }
 
 FillArray(array, -9, 10);
 PrintArray(array);
-posNeg(array, pos, neg);
+posNeg(array);
