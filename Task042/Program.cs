@@ -5,5 +5,22 @@
 
 
 
-int x = 5;
-Console.WriteLine(Convert.ToString(x, 2));
+// int x = 45;
+// Console.WriteLine(Convert.ToString(x, 2));
+
+
+Console.WriteLine("Введите число");
+
+int number = Convert.ToInt32(Console.ReadLine());
+
+string count = null;
+while (number != 0)
+{
+    count += number % 2;
+    number /= 2;
+}
+
+for (int i = count.Length - 1; i >= 0; i--)
+{
+    Console.Write(count[i]);
+}
