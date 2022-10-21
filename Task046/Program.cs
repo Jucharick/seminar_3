@@ -1,4 +1,9 @@
-﻿int [,] matrix  = new int [3, 4];
+﻿Console.WriteLine("Введите высоту матрицы (количество строк)");
+int m = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите длину матрицы (количество столбцов)");
+int n = int.Parse(Console.ReadLine());
+
+int [,] matrix  = new int [m, n];
 
 void FillMatrix(int [,] matr)
 {
