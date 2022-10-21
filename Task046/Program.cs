@@ -1,7 +1,4 @@
-﻿
-
-
-int [,] matrix  = new int [3, 4];
+﻿int [,] matrix  = new int [3, 4];
 
 void PrintMatrix(int [,] matr) 
 {
