@@ -31,16 +31,27 @@ void PrintMatrix(int[,] matr)
     }
 }
 
+// void Squared(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++) // идем по строкам
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++) // идем по колонкам
+//         {
+//             if (i % 2 == 0 && j % 2 == 0)
+//             {
+//                 matr[i, j] = matr[i, j] * matr[i, j] ;
+//             }
+//         }
+//     }
+// }
+
 void Squared(int[,] matr)
 {
-    for (int i = 0; i < matr.GetLength(0); i++) // идем по строкам
+    for (int i = 0; i < matr.GetLength(0); i+=2) // идем по строкам
     {
-        for (int j = 0; j < matr.GetLength(1); j++) // идем по колонкам
+        for (int j = 0; j < matr.GetLength(1); j+=2) // идем по колонкам
         {
-            if (i % 2 == 0 && j % 2 == 0)
-            {
-                matr[i, j] = matr[i, j] * matr[i, j] ;
-            }
+                matr[i, j] = matr[i, j] * matr[i, j] ; // так алгоритм работает быстрее, чем с if
         }
     }
 }
