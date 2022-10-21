@@ -58,9 +58,8 @@ void PrintMatrix(int[,] matr)
 void Sum(int[,] matr)
 {
     int sum = 0;
-    int min = 0;
+    int min = matr.GetLength(0);
     if (matr.GetLength(0) > matr.GetLength(1)) min = matr.GetLength(1);
-    else min = matr.GetLength(0);
     for (int i = 0; i < min; i++)
     {
         sum = sum + matr[i, i]; // можем идти только по индексу i, так как на главной диагонали индексы равны - 1 1, 2 2 и т.д.
