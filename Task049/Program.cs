@@ -56,7 +56,7 @@ int[,] ReplaceEvenElementsMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j+=2) // идем по колонкам с шагом 2 для того, чтобы найти чётные индексы
         {
-            matrix[i, j] = matrix[i, j] * matrix[i, j];
+            matrix[i, j] *= matrix[i, j]; // равносильно matrix[i, j] = matrix[i, j] * matrix[i, j];
         }
     }
     return matrix;
