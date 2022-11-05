@@ -1,15 +1,24 @@
 ﻿// Задача 45: Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
 
 
-int[] array1 = new Int32[10];
-int[] array2 = new Int32[10];
+int[] arr = CreateArrayRndInt(5, 0, 10);
+// int[] array2 = new Int32[10];
+int[] arr2 = CopyArray(arr);
 
-void FillArray(int[] array, int from, int to)
+
+PrintArray(arr);
+PrintArray(arr2);
+
+
+int[] CreateArrayRndInt(int size, int from, int to)
 {
-    for (int i = 0; i < array.Length; i++)
+    int[] array = new int[size];
+    var rnd = new Random();
+    for (int i = 0; i < size; i++)
     {
-        array[i] = new Random().Next(from, to);
+        array[i] = rnd.Next(from, to + 1);
     }
+    return array;
 }
 
 void PrintArray(int[] array)
@@ -22,17 +31,28 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-void CopyArray(int[] array1, int[] array2)
+int[] CopyArray(int[] array)
 {
-    for (int i = 0; i < array1.Length; i++)
+    int[] arrayCopy = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
     {
-        array2[i] = array1[i];
+        arrayCopy[i] = array[i];
     }
+    return arrayCopy;
 }
 
+// void FillArray(int[] array, int from, int to)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(from, to);
+//     }
+// }
 
-
-FillArray(array1, 0, 100);
-PrintArray(array1);
-CopyArray(array1, array2);
-PrintArray(array2);
+// void CopyArray(int[] array1, int[] array2)
+// {
+//     for (int i = 0; i < array1.Length; i++)
+//     {
+//         array2[i] = array1[i];
+//     }
+// }
