@@ -52,4 +52,13 @@ void ConvertToBin (int num)
     Console.Write(bin);
 }
 
+void ConvertToBin2 (int num)
+{
+    if (num == 0) return;
+    ConvertToBin (num / 2);
+    Console.Write(num % 2);
+}
+
 ConvertToBin(number);
+Console.WriteLine();
+ConvertToBin2(number);
