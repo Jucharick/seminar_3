@@ -15,6 +15,10 @@ Console.WriteLine("Введите длину матрицы (количеств�
 int columns = int.Parse(Console.ReadLine());
 
 int [,] matrix  = CreateMatrixRndInt(rows, columns, 0, 10);
+
+PrintMatrix(matrix);
+Console.WriteLine();
+ReplaceEvenElementsMatrix(matrix);
 PrintMatrix(matrix);
 
 
@@ -39,11 +43,23 @@ void PrintMatrix(int [,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++) // идем по колонкам
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4} | "); // 4 - для выравнивания вывода матрицы выводим по 4 символа (для того, чтобы при выводе числа с большей разрядностью матрица была ровной (100, 1000))
+            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4} | "); // 4 - для выравнивания вывода матрицы выводим по 4 символа
             else Console.Write($" {matrix[i, j], 4} ");
         }
         Console.WriteLine("|");
     }
+}
+
+int[,] ReplaceEvenElementsMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i+=2) // идем по строкам  шагом 2 для того, чтобы найти чётные индексы
+    {
+        for (int j = 0; j < matrix.GetLength(1); j+=2) // идем по колонкам с шагом 2 для того, чтобы найти чётные индексы
+        {
+            matrix[i, j] = matrix[i, j] * matrix[i, j];
+        }
+    }
+    return matrix;
 }
 
 
