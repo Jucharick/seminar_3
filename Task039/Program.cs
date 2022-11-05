@@ -25,18 +25,21 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-void Reverse(int[] array)
-{
-    for (int i = 0; i < array.Length / 2; i++ )
-    {
-        int t = array[i];
-        array[i] = array[array.Length - i - 1];
-        array[array.Length - i - 1] = t; 
-    }
-}
+// void Reverse(int[] array)
+// {
+//     for (int i = 0; i < array.Length / 2; i++ )
+//     {
+//         int t = array[i];
+//         array[i] = array[array.Length - i - 1];
+//         array[array.Length - i - 1] = t; 
+//     }
+// }
+
+
 
 
 FillArray(array, -9, 10);
 PrintArray(array);
-Reverse(array);
+Array.Reverse(array); // метод, что есть в c#
+// Reverse(array);
 PrintArray(array);

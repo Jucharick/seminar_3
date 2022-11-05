@@ -62,7 +62,7 @@ void Sum(int[,] matr)
     if (matr.GetLength(0) > matr.GetLength(1)) min = matr.GetLength(1);
     for (int i = 0; i < min; i++)
     {
-        sum = sum + matr[i, i]; // можем идти только по индексу i, так как на главной диагонали индексы равны - 1 1, 2 2 и т.д.
+        sum = sum + matr[i, i]; // можем идти только по индексу i, так как на главной диагонали индексы равны - 0 0, 1 1, 2 2 и т.д.
     }
     Console.WriteLine($"Сумма элементов, находящихся на главной диагонали = {sum}");
 }
