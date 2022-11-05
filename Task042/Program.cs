@@ -31,8 +31,7 @@ void ConvertToBin (int num)
 
     if (num > 0)
     {
-        if (num % 2 == 1) bin += "1";
-        else bin += "0";
+        bin += num % 2;
         ConvertToBin (num / 2);
     }
 
