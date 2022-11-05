@@ -36,12 +36,12 @@ void PrintMatrix(int [,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++) // идем по строкам
     {
-        Console.Write("[");
+        Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++) // идем по колонкам
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4}, "); // 4 - для выравнивания вывода матрицы выводим по 4 символа (для того, чтобы при выводе числа с большей разрядностью матрица была ровной (100, 1000))
-            else Console.Write($" {matrix[i, j], 4}");
+            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4} | "); // 4 - для выравнивания вывода матрицы выводим по 4 символа (для того, чтобы при выводе числа с большей разрядностью матрица была ровной (100, 1000))
+            else Console.Write($" {matrix[i, j], 4} ");
         }
-        Console.WriteLine("]");
+        Console.WriteLine("|");
     }
 }
