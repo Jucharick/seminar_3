@@ -45,10 +45,9 @@ void PrintMatrix(int [,] matrix)
 
 void ReplaceRows(int [,] matrix)
 {
-    int temp = default;
     for (int j = 0; j < matrix.GetLength(1); j++) // 1 - columns идем по колонкам, строки нам известны - это первая и последняя (идти по ним не нужно)
     {
-        temp = matrix[0, j];
+        int temp = matrix[0, j];
         matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
         matrix[matrix.GetLength(0) - 1, j] = temp;
     }
