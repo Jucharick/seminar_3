@@ -27,9 +27,9 @@ else
     Console.WriteLine();
 
     int[] arrayFromMtrix= GetArrayFromMtrix(matrix);
-    Array.Sort(arrayFromMtrix);
+    Array.Sort(arrayFromMtrix); // сортируем массив
     PrintArray(arrayFromMtrix);
-    CountPrintArrayGlossary(arrayFromMtrix);
+    CountPrintArrayGlossary(arrayFromMtrix); // сюда передаем уже отсортированный массив
 }
 
 

@@ -24,6 +24,8 @@ int columns = int.Parse(Console.ReadLine());
 int[,] matrix = CreateMatrixRndInt(rows, columns, 0, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
+int[,] deleteRowCol = CreateMatrixWithoutMinElRowCol(matrix, GetIndexForMinElement(matrix));
+PrintMatrix(deleteRowCol);
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -54,3 +56,47 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+int[] GetIndexForMinElement(int[,] matrix)
+{
+    int[] indexIJ = new int[2]; // координаты min имеют два индекса
+    int min = matrix[0, 0];
+    int minI = 0;
+    int minJ = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++) // 0 - rows
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++) // 1 - columns
+        {
+            if (matrix[i, j] < min)
+            {
+                min = matrix[i, j];
+                minI = i;
+                minJ = j;
+            }
+        }
+    }
+    Console.WriteLine($"min = {min} с координатами ({minI}  {minJ})");
+    return indexIJ;
+}
+
+int[,] CreateMatrixWithoutMinElRowCol(int[,] matrix, int[] indexIJ)
+{
+    int[,] result = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1]; // результирующая матрица будет меньше, поскольку мы удаляем одну строку и один столбец
+    int resultI = 0;
+    int resultJ = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++) // 0 - rows
+    {
+        if (i != indexIJ[0])
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++) // 1 - columns
+            {
+                if (j != indexIJ[1])
+                {
+                    result[resultI, resultJ] = matrix[i, j];
+                    resultJ ++;
+                }
+            }
+            resultI ++;
+        }
+    }
+    return result;
+}
