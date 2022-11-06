@@ -10,6 +10,9 @@ int columns = int.Parse(Console.ReadLine());
 
 int [,] matrix  = CreateMatrixRndInt(rows, columns, 0, 10);
 PrintMatrix(matrix);
+ReplaceRows(matrix);
+Console.WriteLine();
+PrintMatrix(matrix);
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -33,9 +36,20 @@ void PrintMatrix(int [,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4} | "); // 4 - для выравнивания вывода матрицы выводим по 4 символа
-            else Console.Write($" {matrix[i, j], 4} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 2} | "); // 2 - для выравнивания вывода матрицы выводим по 2 символа
+            else Console.Write($" {matrix[i, j], 2} ");
         }
         Console.WriteLine("|");
+    }
+}
+
+void ReplaceRows(int [,] matrix)
+{
+    int temp = default;
+    for (int j = 0; j < matrix.GetLength(1); j++) // 1 - columns идем по колонкам, строки нам известны - это первая и последняя (идти по ним не нужно)
+    {
+        temp = matrix[0, j];
+        matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
+        matrix[matrix.GetLength(0) - 1, j] = temp;
     }
 }
