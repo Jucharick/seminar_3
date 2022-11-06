@@ -18,6 +18,9 @@ if (matrix.GetLength(0) == matrix.GetLength(1))
     PrintMatrix(transpResult);
 }
 else Console.WriteLine($"Заменить строки на столбцы в вашей матрие не возможно, потому что она не квадратная");
+Console.WriteLine("----------------");
+MatrixTransposition2(matrix);
+PrintMatrix(matrix);
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -59,4 +62,17 @@ int[,] MatrixTransposition(int[,] matrix)
         }
     }
     return result;
+}
+
+void MatrixTransposition2(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = i; j < matrix.GetLength(1); j++) // j = i - диагональ у квадратной матрицы сохраняется. Иначе замена происходит дважды
+        {
+            int temp = matrix[j, i];
+            matrix[j, i]= matrix[i, j];
+            matrix[i, j] = temp;
+        }
+    }
 }
