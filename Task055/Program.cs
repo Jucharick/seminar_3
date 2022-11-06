@@ -44,7 +44,7 @@ void PrintMatrix(int[,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 2} | "); // 2 - для выравнивания вывода матрицы выводим по 4 символа
+            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 2} | "); // 2 - для выравнивания вывода матрицы выводим по 2 символа
             else Console.Write($" {matrix[i, j], 2} ");
         }
         Console.WriteLine("|");
