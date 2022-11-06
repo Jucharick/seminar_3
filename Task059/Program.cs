@@ -81,8 +81,8 @@ int[] GetIndexForMinElement(int[,] matrix)
 int[,] CreateMatrixWithoutMinElRowCol(int[,] matrix, int[] indexIJ)
 {
     int[,] result = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1]; // результирующая матрица будет меньше, поскольку мы удаляем одну строку и один столбец
-    int resultI = 0;
-    int resultJ = 0;
+    int i1 = 0;
+    int j1 = 0;
     for (int i = 0; i < matrix.GetLength(0); i++) // 0 - rows
     {
         if (i != indexIJ[0])
@@ -91,11 +91,12 @@ int[,] CreateMatrixWithoutMinElRowCol(int[,] matrix, int[] indexIJ)
             {
                 if (j != indexIJ[1])
                 {
-                    result[resultI, resultJ] = matrix[i, j];
-                    resultJ ++;
+                    result[i1, j1] = matrix[i, j];
+                    j1++;
                 }
             }
-            resultI ++;
+            i1++;
+            j1 = 0;
         }
     }
     return result;
