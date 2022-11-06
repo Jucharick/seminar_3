@@ -9,8 +9,15 @@ int rows = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите длину матрицы (количество столбцов)");
 int columns = int.Parse(Console.ReadLine());
 
-int [,] matrix  = CreateMatrixRndInt(rows, columns, 0, 10);
+int [,] matrix = CreateMatrixRndInt(rows, columns, 0, 10);
 PrintMatrix(matrix);
+Console.WriteLine();
+if (matrix.GetLength(0) == matrix.GetLength(1))
+{
+    int [,] transpResult = MatrixTransposition(matrix);
+    PrintMatrix(transpResult);
+}
+else Console.WriteLine($"Заменить строки на столбцы в вашей матрие не возможно, потому что она не квадратная");
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -27,16 +34,29 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-void PrintMatrix(int [,] matrix) 
+void PrintMatrix(int[,] matrix) 
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 4} | "); // 4 - для выравнивания вывода матрицы выводим по 4 символа
-            else Console.Write($" {matrix[i, j], 4} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($" {matrix[i, j], 2} | "); // 2 - для выравнивания вывода матрицы выводим по 4 символа
+            else Console.Write($" {matrix[i, j], 2} ");
         }
         Console.WriteLine("|");
     }
+}
+
+int[,] MatrixTransposition(int[,] matrix)
+{
+    int[,] result = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            result[j, i] = matrix[i, j];
+        }
+    }
+    return result;
 }
