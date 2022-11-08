@@ -101,3 +101,79 @@ int[,] CreateMatrixWithoutMinElRowCol(int[,] matrix, int[] indexIJ)
     }
     return result;
 }
+
+
+// int[,] array = new int[5, 5];
+// int[,] array2 = new int[array.GetLength(0) -1, array.GetLength(1) - 1];
+// int coordinateI = 0;
+// int coordinateJ = 0;
+
+// fillArray(array);
+// printArray(array);
+// deletingRowAndColumn(array, array2);
+// Console.WriteLine(coordinateI);
+// Console.WriteLine(coordinateJ);
+// printArray(array2);
+
+
+// void deletingRowAndColumn(int[,] matrix, int[,] array2){
+//     int min = matrix[0, 0];
+//     int flagI = 0;
+//     int flagJ = 0;
+
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if(matrix[i, j] < min) {
+//                 min = matrix[i, j];
+//                 coordinateI = i;
+//                 coordinateJ = j;
+//             }
+//         }
+//     }
+//     for (int i = 0; i < matrix.GetLength(0) -1; i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1) -1; j++)
+//         {
+//             if(i < coordinateI) {
+//                 flagI = 0;
+//             } else {
+//                 flagI = 1;
+//             }
+
+//             if(j < coordinateJ) {
+//                 flagJ = 0;
+//             } else {
+//                 flagJ = 1;
+//             }
+
+//             array2[i, j] = array[i + flagI, j + flagJ];
+//         }
+//     }
+// }
+
+// void fillArray(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+
+// void printArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.Write(arr[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+//     Console.WriteLine();
+// }
