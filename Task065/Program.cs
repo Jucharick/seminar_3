@@ -4,8 +4,9 @@
 
 
 
-Console.WriteLine("Задайте значение N");
+Console.WriteLine("Задайте start");
 int start = int.Parse(Console.ReadLine());
+Console.WriteLine("Задайте stop");
 int stop = int.Parse(Console.ReadLine());
 
 Console.WriteLine();
