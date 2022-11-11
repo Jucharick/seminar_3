@@ -12,8 +12,8 @@ int stop = int.Parse(Console.ReadLine());
 Console.WriteLine();
 printNaturalNumbers(start);
 
-void printNaturalNumbers(int number) {
-
+void printNaturalNumbers(int number) 
+{
     if(number == stop ) {
         Console.Write(number);
     } else {

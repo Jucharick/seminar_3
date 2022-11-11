@@ -3,4 +3,19 @@
 // 45 -> 9
 
 
+Console.WriteLine("Введите число");
+int number = int.Parse(Console.ReadLine());
 
+Console.WriteLine();
+SumOfNumbers(number);
+
+void SumOfNumbers(int number) 
+{
+
+    if(number == stop ) {
+        Console.Write(number);
+    } else {
+        Console.Write(number);
+        SumOfNumbers();
+    }
+}
