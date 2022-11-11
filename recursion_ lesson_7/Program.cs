@@ -30,4 +30,4 @@ void CatalogInfo(string path, string indent = "") // string indent = "" это �
 
 }
 string path = @"/Users/Юлия Чарикова/Desktop/GeekBrains/I четверть/3_Знакомство с языками программирования/Урок 1. ДЗ";
-CatalogInfo(path);
+CatalogInfo(path); 
