@@ -5,26 +5,15 @@
 
 
 Console.WriteLine("Задайте значение N");
-int n = int.Parse(Console.ReadLine());
+int start = int.Parse(Console.ReadLine());
+int stop = int.Parse(Console.ReadLine());
 
-PrintNaturalNumbers(n);
 Console.WriteLine();
-printNaturalNumbers(1);
-
-void PrintNaturalNumbers(int n)
-{
-    int number = 1;
-    if (number <= n) 
-    {
-        PrintNaturalNumbers(n-1);
-        Console.Write($" {n}");
-    }
-}
-
+printNaturalNumbers(start);
 
 void printNaturalNumbers(int number) {
 
-    if(n == number ) {
+    if(number == stop ) {
         Console.Write(number);
     } else {
         Console.Write(number);
