@@ -1,2 +1,33 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+// M = 1; N = 5 -> "1, 2, 3, 4, 5"
+// M = 4; N = 8 -> "4, 6, 7, 8"
+
+
+
+Console.WriteLine("Задайте значение N");
+int n = int.Parse(Console.ReadLine());
+
+PrintNaturalNumbers(n);
+Console.WriteLine();
+printNaturalNumbers(1);
+
+void PrintNaturalNumbers(int n)
+{
+    int number = 1;
+    if (number <= n) 
+    {
+        PrintNaturalNumbers(n-1);
+        Console.Write($" {n}");
+    }
+}
+
+
+void printNaturalNumbers(int number) {
+
+    if(n == number ) {
+        Console.Write(number);
+    } else {
+        Console.Write(number);
+        printNaturalNumbers(number+1);
+    }
+}
