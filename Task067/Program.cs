@@ -6,16 +6,10 @@
 Console.WriteLine("Введите число");
 int number = int.Parse(Console.ReadLine());
 
-Console.WriteLine();
-SumOfNumbers(number);
+Console.WriteLine(SumOfNumbers(number));
 
-void SumOfNumbers(int number) 
+int SumOfNumbers(int n)
 {
-
-    if(number == stop ) {
-        Console.Write(number);
-    } else {
-        Console.Write(number);
-        SumOfNumbers();
-    }
+    if (n < 10) return n;
+    else return SumOfNumbers(n / 10 ) + n % 10;
 }

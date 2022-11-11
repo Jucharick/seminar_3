@@ -14,9 +14,12 @@ printNaturalNumbers(start);
 
 void printNaturalNumbers(int number) 
 {
-    if(number == stop ) {
+    if(number == stop ) 
+    {
         Console.Write(number);
-    } else {
+    } 
+    else 
+    {
         Console.Write(number);
         printNaturalNumbers(number+1);
     }
