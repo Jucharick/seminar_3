@@ -12,6 +12,8 @@ Console.WriteLine("Задайте значение N");
 int n = int.Parse(Console.ReadLine());
 
 PrintNaturalNumbers(n);
+Console.WriteLine();
+printNaturalNumbers(1);
 
 void PrintNaturalNumbers(int n)
 {
@@ -20,5 +22,16 @@ void PrintNaturalNumbers(int n)
     {
         PrintNaturalNumbers(n-1);
         Console.Write($" {n}");
+    }
+}
+
+
+void printNaturalNumbers(int number) {
+
+    if(n == number ) {
+        Console.Write(number);
+    } else {
+        Console.Write(number);
+        printNaturalNumbers(number+1);
     }
 }
