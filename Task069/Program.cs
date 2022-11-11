@@ -13,5 +13,5 @@ Console.WriteLine(Exponentiation(number, degree));
 int Exponentiation(int n, int degree)
 {
     if (degree == 1) return n;
-    else return Exponentiation(n, degree -1) * n;
+    else return Exponentiation(n, degree - 1) * n;
 }
