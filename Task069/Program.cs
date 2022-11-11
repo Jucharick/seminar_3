@@ -3,3 +3,15 @@
 // A = 2; B = 3 -> 8
 
 
+Console.WriteLine("Введите число");
+int number = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите степень");
+int degree = int.Parse(Console.ReadLine());
+
+Console.WriteLine(Exponentiation(number, degree));
+
+int Exponentiation(int n, int degree)
+{
+    if (degree == 1) return n;
+    else return Exponentiation(n, degree -1) * n;
+}
